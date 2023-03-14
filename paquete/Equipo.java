@@ -2,7 +2,7 @@ package paquete;
 
 public class Equipo // Nombre y descripcion de un equipo
 {
-    private final String nombre;
+    private final String nombre; // identificador unico
     private final String descripcion;
 
     public Equipo()

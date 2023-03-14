@@ -1,7 +1,8 @@
 package paquete;
 
-public class Partido
+public class Partido // un partido entre dos equipos
 {
+    private final int id;
     private Equipo equipo1;
     private Equipo equipo2;
     private int golesEquipo1;
@@ -9,14 +10,21 @@ public class Partido
 
     public Partido()
     {
+        this.id = -1;
     }
 
-    public Partido(Equipo a, Equipo b, int x, int y)
+    public Partido(int id, Equipo a, Equipo b, int x, int y)
     {
+        this.id = id;
         this.equipo1 = a;
         this.equipo2 = b;
         this.golesEquipo1 = x;
         this.golesEquipo2 = y;
+    }
+
+    public int getId()
+    {
+        return id;
     }
 
     public Equipo getEquipo1()
@@ -65,4 +73,34 @@ public class Partido
                 "\tEquipo 2: " + equipo2.toString() + " - Goles: " + golesEquipo2;
     }
 
+    public String confirmarResultado(Equipo x) // Equipo x representa el equipo seleccionado en un pronostico
+    {
+        String txt = "";
+        if (golesEquipo1 == golesEquipo2)
+        {
+            txt = "empate";
+            return txt;
+        }
+        else
+        {
+            if (x.equals(equipo1))
+            {
+                if (golesEquipo1 > golesEquipo2)
+                    txt = "ganador";
+                else
+                    txt = "perdedor";
+            }
+            else
+            {
+                if (x.equals(equipo2))
+                {
+                    if (golesEquipo1 > golesEquipo2)
+                        txt = "perdedor";
+                    else
+                        txt = "ganador";
+                }
+            }
+        }
+        return txt;
+    }
 }
