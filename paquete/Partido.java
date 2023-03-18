@@ -73,34 +73,34 @@ public class Partido // un partido entre dos equipos
                 "\tEquipo 2: " + equipo2.toString() + " - Goles: " + golesEquipo2;
     }
 
-    public String confirmarResultado(Equipo x) // Equipo x representa el equipo seleccionado en un pronostico
+    public ResultadoEnum confirmarResultado(Equipo x) // Equipo x representa el equipo seleccionado en un pronostico
     {
-        String txt = "";
+        ResultadoEnum res = null;
         if (golesEquipo1 == golesEquipo2)
         {
-            txt = "empate";
-            return txt;
+            res = ResultadoEnum.EMPATE;
+            return res;
         }
         else
         {
             if (x.equals(equipo1))
             {
                 if (golesEquipo1 > golesEquipo2)
-                    txt = "ganador";
+                    res = ResultadoEnum.GANADOR;
                 else
-                    txt = "perdedor";
+                    res = ResultadoEnum.PERDEDOR;
             }
             else
             {
                 if (x.equals(equipo2))
                 {
                     if (golesEquipo1 > golesEquipo2)
-                        txt = "perdedor";
+                        res = ResultadoEnum.PERDEDOR;
                     else
-                        txt = "ganador";
+                        res = ResultadoEnum.GANADOR;
                 }
             }
         }
-        return txt;
+        return res;
     }
 }

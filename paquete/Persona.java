@@ -41,7 +41,7 @@ public class Persona // consiste en un identificador "nombre" y un arreglo de su
 
     public String toString()
     {
-        String txt = "NOMBRE: " + nombre + "\n";
+        String txt = "NOMBRE: " + nombre + " - PUNTOS: " + calcularPuntos() + "\n";
         for (int i=0; i < pronosticos.size(); i++)
         {
             txt = txt + "  -PRONOSTICO " + Integer.toString(i+1) + ": \n";

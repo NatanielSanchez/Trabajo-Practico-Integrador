@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Ronda
 {
     private static int totalRondas = 0; // cantidad total de rondas creadas
-    private String numero;
+    private int numero;
     private ArrayList<Partido> partidos; // arreglo-lista de clase Partido
 
 
@@ -14,7 +14,7 @@ public class Ronda
         totalRondas++;
     }
 
-    public Ronda(String numero)
+    public Ronda(int numero)
     {
         this.numero = numero;
         this.partidos = new ArrayList<Partido>();
@@ -26,12 +26,12 @@ public class Ronda
         return totalRondas;
     }
 
-    public String getNumero()
+    public int getNumero()
     {
         return numero;
     }
 
-    public void setNumero(String numero)
+    public void setNumero(int numero)
     {
         this.numero = numero;
     }
