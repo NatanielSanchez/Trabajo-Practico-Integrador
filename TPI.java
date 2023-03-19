@@ -11,6 +11,10 @@ public class TPI
 
     public static void main(String[] args)
     {
+		// LOS ARCHIVOS ESTAN ESCRITOS DE LA SIGUIENTE FORMA:
+		//- resultados.csv : una linea por partido, con formato "equipo1,descripcion1,goles1,equipo2,descripcion2,goles2"
+		//-pronosticos.csv : cada linea contiene un nombre, la id del partido a pronosticar, el equipo elegido y 
+		// 					 el resultado elegido, con formato "nombre,id,equipo,resultado"
         generatePartidos();
         generateParticipantes();
 
