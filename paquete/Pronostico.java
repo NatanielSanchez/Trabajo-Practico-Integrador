@@ -38,6 +38,9 @@ public class Pronostico // consiste en una apuesta o prediccion hacia un equipo 
     @Override
     public String toString()
     {
+        if (resultado == ResultadoEnum.EMPATE)
+            return partido.toString() + "\n\tPREDICCION: " + resultado + "\n";
+
         return partido.toString() + "\n\tPREDICCION: " + equipo.toString() + " - " + resultado + "\n";
     }
 

@@ -5,12 +5,13 @@ import java.util.ArrayList;
 public class Ronda
 {
     private static int totalRondas = 0; // cantidad total de rondas creadas
-    private int numero;
+    private final int numero;
     private ArrayList<Partido> partidos; // arreglo-lista de clase Partido
 
 
-    public Ronda()
+    public Ronda() // NO SE USA ESTO
     {
+        numero = -1;
         totalRondas++;
     }
 
@@ -31,14 +32,23 @@ public class Ronda
         return numero;
     }
 
-    public void setNumero(int numero)
-    {
-        this.numero = numero;
-    }
-
-    public ArrayList<Partido> getPartidos()
+    public ArrayList<Partido> getPartidos() // Devuelve TODA LA LISTA DE PARTIDOS
     {
         return partidos;
+    }
+
+    public Partido getPartido(int num) // Devuelve un puntero de UN SOLO partido segun su numero ID...
+    {                                  // De lo contrario, devuelve null.
+        Partido x = null;
+        for (int i=0; i < partidos.size(); i++) // Recorre cada partido de la ronda
+        {
+            if (partidos.get(i).getId() == num)
+            {
+                x = partidos.get(i);
+                break;
+            }
+        }
+        return x;
     }
 
     public void setPartidos(ArrayList<Partido> partidos)
