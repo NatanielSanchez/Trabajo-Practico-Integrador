@@ -1,4 +1,6 @@
 import paquete.*;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
@@ -64,9 +66,9 @@ public class Torneo// Crea y almacena todos los datos de los equipos, partidos, 
                 ronda.addPartido(partido);
             }
         }
-        catch (Exception ex)
+        catch (FileNotFoundException ex)
         {
-            System.out.println("Algo salió mal...");
+            System.out.println(ex.getMessage());
         }
         lista_rondas.add(ronda);
     }
@@ -110,9 +112,9 @@ public class Torneo// Crea y almacena todos los datos de los equipos, partidos, 
                 persona.addPronostico(pron);
             }
         }
-        catch (Exception ex)
+        catch (FileNotFoundException ex)
         {
-            System.out.println("Algo salió mal...");
+            System.out.println(ex.getMessage());
         }
     }
 
