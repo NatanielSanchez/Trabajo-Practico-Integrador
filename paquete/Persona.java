@@ -44,7 +44,8 @@ public class Persona // consiste en un identificador "nombre" y un arreglo de su
         String txt = "NOMBRE: " + nombre + " - PUNTOS: " + calcularPuntos() + "\n";
         for (int i=0; i < pronosticos.size(); i++)
         {
-            txt = txt + "  -PRONOSTICO " + Integer.toString(i+1) + ": \n";
+            //txt = txt + "  -PRONOSTICO " + Integer.toString(i+1) + ": \n";
+            txt = txt + "  -PRONOSTICO DEL PARTIDO " + pronosticos.get(i).getIdPartido() + ": \n";
             txt = txt + pronosticos.get(i).toString();
         }
         return txt;

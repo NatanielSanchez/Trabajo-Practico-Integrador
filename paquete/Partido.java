@@ -73,8 +73,11 @@ public class Partido // un partido entre dos equipos
                 "\tEquipo 2: " + equipo2.toString() + " - Goles: " + golesEquipo2;
     }
 
-    public ResultadoEnum confirmarResultado(Equipo x) // Equipo x representa el equipo seleccionado en un pronostico
+    public ResultadoEnum confirmarResultado(Equipo x) throws NullPointerException
+    // Equipo x representa el equipo seleccionado en un pronostico
     {
+        if (x == null) throw new NullPointerException("Equipo es null. Algo salio mal...");
+
         ResultadoEnum res = null;
         if (golesEquipo1 == golesEquipo2)
         {
